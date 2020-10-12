@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class SurfingCoach implements Coach {
 
-	// inject property file field values
-	@Value("${foo.email}")
+	// inject field values from property file
+	@Value("${email}")
 	@Autowired
 	@Qualifier("fortuneServiceImp")
 	private String email;
 
-	@Value("${foo.team}")
+	@Value("${team}")
 	@Autowired
 	@Qualifier("fortuneServiceImp")
 	private String team;
