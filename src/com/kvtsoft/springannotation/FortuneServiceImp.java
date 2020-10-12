@@ -21,7 +21,7 @@ public class FortuneServiceImp implements FortuneService {
 
 			// read the fortuneFile
 			Stream<String> fortuneStream = Files.lines(
-					Paths.get("F:\\eclipse-workspace\\spring-demo-annotations\\src\\foruneFile.txt"),
+					Paths.get("F:\\eclipse-workspace\\spring-demo-annotations\\src\\fortuneFile.txt"),
 					Charset.defaultCharset());
 
 			// convert stream into a String array
