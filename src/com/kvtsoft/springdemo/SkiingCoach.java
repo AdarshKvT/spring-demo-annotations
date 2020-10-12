@@ -1,6 +1,7 @@
 package com.kvtsoft.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,20 +12,20 @@ public class SkiingCoach implements Coach {
 
 	// set default no-arg constructor
 	public SkiingCoach() {
-		System.out.println(">>Skiing Coach: inside default consrtuctor");
+		// System.out.println(">>Skiing Coach: inside default consrtuctor");
 
 	}
 
 	// inject fortuneService into the setter method.
-//	@Autowired
-//	public void setFortuneService(FortuneService fortuneService) {
-//		System.out.println(">>Skiing Coach: inside setFortuneService");
-//		this.fortuneService = fortuneService;
-//	}
+	@Autowired
+	public void setFortuneService(@Qualifier("fortuneServiceImp") FortuneService fortuneService) {
+		// System.out.println(">>Skiing Coach: inside setFortuneService");
+		this.fortuneService = fortuneService;
+	}
 
 	@Autowired
-	public void doSomeCrazyStuff(FortuneService fortuneService) {
-		System.out.println(">>Skiing Coach: inside doSomeCrazyStuff");
+	public void doSomeCrazyStuff(@Qualifier("fortuneServiceImp") FortuneService fortuneService) {
+		// System.out.println(">>Skiing Coach: inside doSomeCrazyStuff");
 		this.fortuneService = fortuneService;
 	}
 
