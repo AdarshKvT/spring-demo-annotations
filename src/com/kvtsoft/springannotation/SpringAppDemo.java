@@ -12,6 +12,9 @@ public class SpringAppDemo {
 		// retrieve the bean
 		Coach theCoach = context.getBean("hockeyCoachImp", Coach.class);
 
+		// check the scope (prototype) of bean by printing the memory of the objects
+		System.out.println("theCoach>>" + theCoach);
+
 		// call the methods on the bean
 		String dailyWorkout = theCoach.getDailyWorkout();
 		System.out.println(dailyWorkout);
