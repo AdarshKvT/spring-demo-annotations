@@ -45,7 +45,6 @@ public class HockeyCoachImp implements Coach {
 
 			Stream<String> steam = Files.lines(Paths.get(uri), Charset.defaultCharset());
 			steam.forEachOrdered(System.out::println);
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
